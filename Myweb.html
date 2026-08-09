@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page.css">
+    <title>Portfolio</title>
+</head>
+<body id="top">
+<header>
+    <div class="logo">
+    <a href="#top"><img src="ICON/LOGO.png" alt="Logo"></a>
+   </div>
+        
+    <nav>
+        <ul class = "sidebar">
+            <li onclick="hideSidebar()""><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#FFFFFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contacts">Contact Me</a></li>
+        </ul>
+        <ul>
+            <li class="hide-on-mobile"><a href="#about">About Me</a></li>
+            <li class="hide-on-mobile"><a href="#skills">Skills</a></li>
+            <li class="hide-on-mobile"><a href="#projects">Projects</a></li>
+            <li class="hide-on-mobile"><a href="#contacts">Contact Me</a></li>
+            <li class ="show-in-mobile" onclick="ShowSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#FFFFFF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section id = "about">
+        <h2>About Me</h2>
+        <div class = "about-container">
+            
+            <video class = "vid" autoplay muted loop playsinline>
+            <source src="profile.mp4" type="video/mp4">
+                
+            </video>
+            <div class = "about-text">
+                <h3>Hi,<span> I'm Gab</span></h3>
+                <p>A 4th-year BSIT graduate with solid skills in data Management,
+                    validation, and data security. Knowledgeable in Tech Support, and Programming.
+                    Experienced in handling databases
+                    and developing backend function during college projects.
+                    Completed an Internship focused on IT Support,
+                    databases management, ensuring data accuracy and generation reports.
+                    Detail-oriented and want to learn more and grow in the IT field.
+                </p>
+            
+                <a href="GabrielHermoso-Resume1.pdf" download id="dl-cv-btn">Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <section id = "skills">
+        <h2>My Skills</h2>
+        <div class = "skills-container">
+
+            <div class="skills-set">
+            <h3>Skill Set</h3>
+
+            <ul>
+                <li>
+                    <img src="ICON/html.png" alt="HTML">
+                    <span>HTML</span>
+                </li>
+
+                <li>
+                    <img src="ICON/bootstrap.png" alt="Bootstrap">
+                    <span>BOOTSTRAP</span>
+                </li>
+
+                <li>
+                    <img src="ICON/tailwind.png" alt="Tailwind">
+                    <span>TAILWIND</span>
+                </li>
+
+                <li>
+                    <img src="ICON/js.png" alt="JavaScript">
+                    <span>JAVA SCRIPT</span>
+                </li>
+
+                <li>
+                    <img src="ICON/python.png" alt="Python">
+                    <span>PYTHON</span>
+                </li>
+
+                <li>
+                    <img src="ICON/php.png" alt="PHP">
+                    <span>PHP</span>
+                </li>
+
+                <li>
+                    <img src="ICON/visual-basic.png" alt="Visual Basic">
+                    <span>VISUAL BASIC</span>
+                </li>
+
+                <li>
+                    <img src="ICON/mysql.png" alt="MySQL">
+                    <span>MYSQL</span>
+                </li>
+            </ul>
+
+        </div>
+        </div>
+    </section>
+
+    <section id = "projects">
+        <h2>My Projects</h2>
+        <div class = "project-container">
+            
+            <div class = "project-card">
+                <ul>
+                    <li>
+                        <img src="IMAGES/Youtube.png" alt="2nd Project">
+                        <span>Sales & Inventory System</span>
+                        <a href="https://youtu.be/hSH17WYHlPs">Project link</a>
+                        <a href="https://youtu.be/hSH17WYHlPs">View</a>
+                    </li>
+
+                    <li>
+                        <img src="IMAGES/login.png" alt="2nd Project">
+                        <span>Php Login System</span>
+                        <a href="https://github.com/gabrielhermoso/php-login-register-system">Project link</a>
+                        <a href="https://youtu.be/hSH17WYHlPs">View</a>
+                    </li>
+
+                    <li>
+                        <img src="IMAGES/webscraping.png" alt="3rd Project">
+                        <span>Web Scraping</span>
+                        <a class= "link"href="https://github.com/gabrielhermoso/PythonProjects1">Project link</a>
+                        <a class ="view" href="https://youtu.be/hSH17WYHlPs">View</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contacts">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <p class ="message_for_viewer">Feel free to reach out if you'd like to work together or have any questions.</p>
+
+            <div class="contact-info">
+                <p>📧 Email: <a href="mailto:infernalgabriel@gmail.com">infernalgabriel@gmail.com</a></p>
+                <p>📱 Phone: +63 997 703 0658</p>
+                <p>📍 Taguig City, Philippines</p>
+            </div>
+
+            <div class="social-links">
+                <a href=""></a><img src="ICON/icon_facebook.png" alt="facebook">
+                <a href="https://github.com/gabrielhermoso"><img src="ICON/icon_github.png" alt="github"></a>
+                <img src="ICON/icon_linkedin.png" alt="linkedin">
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Gab.Dev. All Rights Reserved.</p>
+            <p>Designed & Developed by Gabriel Hermoso</p>
+        </div>
+    </footer>
+<script>
+
+
+    function ShowSidebar(){
+        const sidebar = document.querySelector(".sidebar")
+        sidebar.style.display = "flex";
+    }
+    function hideSidebar(){
+        const sidebar = document.querySelector(".sidebar")
+        sidebar.style.display = "none";
+    }
+
+
+// 
+    //SKILL SET ANIMATION OBSERBER
+//
+
+
+const skills = document.querySelectorAll(".skills-set li");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            skills.forEach((skill, index) => {
+
+                setTimeout(() => {
+                    skill.classList.add("show");
+                }, index * 150);
+
+            });
+
+        }
+
+    });
+});
+
+observer.observe(document.querySelector(".skills-set"));
+
+// 
+    //PROJECTS ANIMATION OBSERBER
+//s
+
+const projects = document.querySelectorAll(".project-card li");
+
+const projectobserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            projects.forEach((project, index) => {
+
+                setTimeout(() => {
+                    project.classList.add("show");
+                }, index * 150);
+
+            });
+
+        }
+
+    });
+});
+
+projectobserver.observe(document.querySelector(".project-card"));
+
+
+</script>
+</body>
+</html>
+
