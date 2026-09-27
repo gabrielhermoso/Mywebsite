@@ -8,8 +8,9 @@
 </head>
 <body id="top">
 <header>
-    <div class="logo">
-    <a href="#top"><img src="ICON/LOGO.png" alt="Logo"></a>
+    <div class="logo-box">
+
+    <a class="logo" href="#top">< G ></a>
    </div>
         
     <nav>
@@ -148,7 +149,20 @@
         <div class="project-container">
         
             <div class = "project-card">
-                <img src="IMAGES/Youtube.png" alt="1st Project">
+
+                <div class="image-container">
+                    <img class="image" src="IMAGES/sales&inventory.png" alt="1st Project">
+
+                    <button class="hover-button"
+                        onclick="openProject(
+                        'IMAGES/sales&inventory.png',
+                        'Sales & Inventory System',
+                        `Developed a database-driven Sales and Inventory Management System
+                            using Visual Basic and MySQL to manage products, inventory, sales transactions,
+                            users, supliers, categories, and discounts.`   
+                        )">View</button>
+                    
+                </div>
                 <div class="project-text">
                     <h2>Sales & Inventory System</h2>
                     <p>Developed a database-driven Sales and Inventory Management System
@@ -163,7 +177,20 @@
             </div>
 
             <div class = "project-card">
-                <img src="IMAGES/login.png" alt="2nd Project">
+                <div class="image-container">
+                    <img  class="image" src="IMAGES/ecommerce.png" alt="2nd Project">
+
+                    <button class="hover-button" 
+                        onclick="openProject(
+                        'IMAGES/ecommerce.png',
+                        'Ecommerce Website',
+                        `Developed a responsive e-commerce website to apply JavaScript and front-end development
+                            skills, implementing a dynamic shopping cart, Local Storage, product research, filtering, interactive
+                            product modals, and responsive UI components.`
+                        )">View</button>
+
+                </div>
+                
                 <div class="project-text">
                     <h2>Ecommerce Website</h2>
                     <p>Developed a responsive e-commerce website to apply JavaScript and front-end development
@@ -174,14 +201,31 @@
                 <ul class = "project-tools">
                     <li><span>HTML5</span></li>
                     <li><span>CSS3</span></li>
-                    <li><span>Java Script/span></li>
+                    <li><span>Java Script</span></li>
                 </ul>
             </div>
 
             <div class = "project-card">
-                <img src="IMAGES/webscraping.png" alt="3rd Project">
+
+                <div class="image-container">
+                    <img class="image" src="IMAGES/jobapplicationtracker.png" alt="3rd Project">
+
+                    <button class="hover-button"
+                        onclick="openProject(
+                        'IMAGES/jobapplicationtracker.png',
+                        'Job Application Tracker',
+                        `Developed full-stack Job Application Tracker using HTML, CSS, JavaScript, PHP,
+                            and MySQL featuring user authentication, application tracking, CRUD operations,
+                            status management, and secure REST API integration.`
+                        )">View</button>
+                        
+                </div>
+
+
                 <div class="project-text">
+
                     <h2>Job Application Tracker</h2>
+
                     <p>Developed full-stack Job Application Tracker using HTML, CSS, JavaScript, PHP,
                         and MySQL featuring user authentication, application tracking, CRUD operations,
                         status management, and secure REST API integration.
@@ -199,6 +243,29 @@
         </div>
         
     </section>
+
+    <div class="project-modal">
+        
+        <div class="project-modal-container">
+            <button class="close-button" type="button" onclick="closeModal()">&times;</button>
+            
+            <img id="projectImage" src="" alt="modal-image" >
+            
+            <h2 id="projectTitle">Project-title</h2>
+
+            <p id="projectDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Alias natus iure nulla accusantium provident libero odio omnis neque,
+                inventore beatae, numquam dolor sunt, deleniti amet tempore facilis
+                voluptates rem voluptatibus.</p>
+            <div class="project-link">
+                <a href="" id="link1">View Code</a>
+                <a href="" id="link2">View Demo</a>
+            </div>
+            
+            
+            
+        </div>
+    </div>
 
 
     <section id="contacts">
@@ -280,59 +347,27 @@
     }
 
 
-// 
-    //SKILL SET ANIMATION OBSERBER
-//
 
 
-const skills = document.querySelectorAll(".skills-set li");
+const projectModal = document.querySelector(".project-modal")
+const projectImage = document.getElementById("projectImage")
+const projectTitle = document.getElementById("projectTitle")
+const projectDescription = document.getElementById("projectDescription")
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+function closeModal(){ 
+    projectModal.style.display = "none";
+}
 
-        if (entry.isIntersecting) {
 
-            skills.forEach((skill, index) => {
+function openProject(image, title, description){
+    
+    projectImage.src = image
+    projectTitle.textContent = title
+    projectDescription.textContent = description
 
-                setTimeout(() => {
-                    skill.classList.add("show");
-                }, index * 150);
-
-            });
-
-        }
-
-    });
-});
-
-observer.observe(document.querySelector(".skills-set"));
-
-// 
-    //PROJECTS ANIMATION OBSERBER
-//s
-
-const projects = document.querySelectorAll(".project-card li");
-
-const projectobserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            projects.forEach((project, index) => {
-
-                setTimeout(() => {
-                    project.classList.add("show");
-                }, index * 150);
-
-            });
-
-        }
-
-    });
-});
-
-projectobserver.observe(document.querySelector(".project-card"));
-
+    projectModal.style.display = "flex";
+    
+}
 
 </script>
 </body>

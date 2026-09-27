@@ -56,45 +56,34 @@ header {
     border-bottom: 1px solid rgba(120, 135, 180, 0.18);
 }
 
-.logo {
+.logo-box {
     position: relative;
     width: 100px;
     height: 60px;
-    
+    top: 50%;
+    left: 0;
+    transform: translateY(10%);
 }
 
-.logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: all 0.3s ease;
-}
-
-.logo::after {
-    content: "";
+.logo{
+    display: flex;
     position: absolute;
-    left: 50%;
-    bottom: 5px;
-
-    width: 0;
-    height: 3px;
-
+    padding: 12px 5px;
+    border-radius: 10px;
     background:
         linear-gradient(
-            to right,
-            #3b82f6,
-            #8b5cf6
+            135deg,
+            #2563eb,
+            #4f46e5
         );
-    border-radius: 10px;
-    transform: translateX(-50%);
-    transition: 0.3s ease;
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.25);
+    font-weight: bold;
+    font-size: 16px;
 }
-.logo img:hover{
-    transform: scale(1.1);
-}
-.logo:hover::after{
-    width: 100%;
-}
+
+
+
 nav{
    box-shadow: 3px 3px 5px rgba(0, 0, 0, .1);
     margin-right: 40px;
@@ -589,12 +578,58 @@ span{
 .project-card:hover{
     border: 1px solid rgba(82, 115, 249, 1);
 }
-.project-card img{
-    
-    height: 200px;
+
+
+.image-container {
+    position: relative;
     width: 100%;
-    object-fit: cover;
+    overflow: hidden;
 }
+
+.image-container .image {
+    display: block;
+    width: 100%;
+    transition: 0.3s ease;
+    height: 190px;
+}
+
+.hover-button {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease, 0.3s ease;
+}
+
+.image-container:hover .image {
+    filter: brightness(50%);
+    transform: scale(1.1);
+}
+
+.image-container:hover .hover-button {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
 
 .project-text{
     padding: 20px;
@@ -624,6 +659,102 @@ span{
         border: 1px solid rgba(82, 115, 249, 0.50);
         border-radius: 5px;
     }
+}
+
+
+/* Background overlay */
+
+.project-modal{
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.467);
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+.project-modal-container{
+    margin: 0 20px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    background-color: #19294b;
+    height: 600px;
+    width: 750px;
+    z-index: 1000;
+    padding: 20px;
+    border-radius: 12px;
+}
+.close-button{
+    display: flex;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    width: 20px;
+    background: transparent;
+    border: none;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+}
+
+.project-modal-container img{
+    display: flex;
+    align-self: center;
+    height: 450px;
+    max-width: 600px;
+    border-radius: 12px;
+    background-color: #14203a;
+    padding:10px;
+    border: 1px solid rgba(82, 115, 249, 0.18);
+    margin-bottom: 20px;
+}
+.project-modal-container h2{
+    color: white;
+}
+.project-modal-container p{
+    color:#c2c2c2;
+}
+.project-link{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 30px;
+
+}
+.project-link a{
+    padding: 12px;
+    margin-top: 30px;
+    text-decoration: none;
+    width: 150px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.25);
+    transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+}
+.project-link a:hover{
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(37, 99, 235, 0.35);
 }
 
 
@@ -1608,6 +1739,12 @@ footer{
     }
 
 
+    .project-modal-container img{
+        width: 100%;
+        max-height: 300px;
+    }
+
+
     /* CONTACT */
 
     #contacts {
@@ -1913,6 +2050,12 @@ footer{
         font-size: 11px;
         padding: 4px 7px;
     }
+
+
+    .project-modal-container img{
+        max-height: 250px;
+    }
+
 
 
     /* CONTACT */
