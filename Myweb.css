@@ -66,7 +66,6 @@ header {
 }
 
 .logo{
-    display: flex;
     position: absolute;
     padding: 12px 5px;
     border-radius: 10px;
@@ -1375,16 +1374,8 @@ footer{
 
     /* HEADER */
 
-    header {
-        height: 60px;
-        padding: 0 10px;
-    }
-
-    .logo {
-        width: 80px;
-        height: 55px;
-        margin-left: 0;
-    }
+    
+    
 
     .show-in-mobile {
         display: flex;
@@ -1394,6 +1385,7 @@ footer{
         display: none;
     }
 
+    
 
     /* SIDEBAR */
 
@@ -1891,10 +1883,7 @@ footer{
 
     /* HEADER */
 
-    .logo {
-        width: 70px;
-        height: 50px;
-    }
+    
 
 
     /* SIDEBAR */
