@@ -15,11 +15,11 @@
         
     <nav>
         <ul class = "sidebar">
-            <li onclick="hideSidebar()""><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#FFFFFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contacts">Contact Me</a></li>
+            <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#FFFFFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a onclick="hideSidebar()" href="#about">About Me</a></li>
+            <li><a onclick="hideSidebar()" href="#skills">Skills</a></li>
+            <li><a onclick="hideSidebar()" href="#projects">Projects</a></li>
+            <li><a onclick="hideSidebar()" href="#contacts">Contact Me</a></li>
         </ul>
         <ul>
             <li class="hide-on-mobile"><a href="#about">About Me</a></li>
@@ -153,14 +153,14 @@
                 <div class="image-container">
                     <img class="image" src="IMAGES/sales&inventory.png" alt="1st Project">
 
-                    <button class="hover-button"
+                    <button class="hover-button" 
                         onclick="openProject(
                         'IMAGES/sales&inventory.png',
                         'Sales & Inventory System',
                         `Developed a database-driven Sales and Inventory Management System
                             using Visual Basic and MySQL to manage products, inventory, sales transactions,
                             users, supliers, categories, and discounts.`   
-                        )">View</button>
+                        ); openlink()">View</button>
                     
                 </div>
                 <div class="project-text">
@@ -180,14 +180,15 @@
                 <div class="image-container">
                     <img  class="image" src="IMAGES/ecommerce.png" alt="2nd Project">
 
-                    <button class="hover-button" 
+                    <button class="hover-button"  
                         onclick="openProject(
                         'IMAGES/ecommerce.png',
                         'Ecommerce Website',
                         `Developed a responsive e-commerce website to apply JavaScript and front-end development
                             skills, implementing a dynamic shopping cart, Local Storage, product research, filtering, interactive
                             product modals, and responsive UI components.`
-                        )">View</button>
+                        
+                        ); openlink()">View</button>
 
                 </div>
                 
@@ -258,8 +259,8 @@
                 inventore beatae, numquam dolor sunt, deleniti amet tempore facilis
                 voluptates rem voluptatibus.</p>
             <div class="project-link">
-                <a href="" id="link1">View Code</a>
-                <a href="" id="link2">View Demo</a>
+                <a href="" id="link1" ">View Code</a>
+                <a href="" id="link2" "></a>
             </div>
             
             
@@ -338,6 +339,7 @@
 
 
     function ShowSidebar(){
+        window.preventDefault
         const sidebar = document.querySelector(".sidebar")
         sidebar.style.display = "flex";
     }
@@ -354,6 +356,9 @@ const projectImage = document.getElementById("projectImage")
 const projectTitle = document.getElementById("projectTitle")
 const projectDescription = document.getElementById("projectDescription")
 
+const viewCodeButton = document.getElementById("link1")
+const viewLive = document.getElementById("link2")
+
 function closeModal(){ 
     projectModal.style.display = "none";
 }
@@ -364,10 +369,28 @@ function openProject(image, title, description){
     projectImage.src = image
     projectTitle.textContent = title
     projectDescription.textContent = description
+    
+    if(image === "IMAGES/sales&inventory.png"){
+        viewLive.textContent = "View Demo"
+        viewLive.href = `https://gab-jobtracker.infinityfree.me/job-tracker/index.html`
+        viewCodeButton.href = "https://github.com/gabrielhermoso/Sales-Inventory-System-"
+    }
+    else if(image === "IMAGES/ecommerce.png"){
+        viewLive.textContent = "View Website"
+        viewLive.href = `https://gabrielhermoso.github.io/ecommerce-merch`
+        viewCodeButton.href = "https://github.com/gabrielhermoso/ecommerce-merch"
 
+    }else if(image === "IMAGES/jobapplicationtracker.png"){
+        viewLive.textContent = "View Website"
+        viewLive.href = `https://gab-jobtracker.infinityfree.me/job-tracker/index.html`
+        viewCodeButton.href = "https://github.com/gabrielhermoso/job-tracker"
+    }
     projectModal.style.display = "flex";
     
 }
+
+
+
 
 </script>
 </body>
